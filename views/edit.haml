@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %link{rel: 'stylesheet', href: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'}
+    %link{rel: 'stylesheet', href: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css'}
+    %script{src: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'}
+    %title 
+      =title
+  %body
+    .container
+      .panel.panel-default
+        .panel-body
+          %form{action: "/edit/#{filename}", method: 'post'}
+            %div
+              %textarea.form-control{rows: 10, name: 'text'}
+                =text
+            %div
+              %button.btn.btn-primary{type: 'submit'}
+                Save!

@@ -1,0 +1,25 @@
+!!!
+%html
+  %head
+    %link{rel: 'stylesheet', href: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'}
+    %link{rel: 'stylesheet', href: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css'}
+    %script{src: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'}
+    %title 
+      'new'
+  %body
+    .container
+      .panel.panel-default
+        .panel-body
+          %form{action: "/create", method: 'post'}
+            .form-group
+              %label{for: 'title_label'}
+                Title
+              %input.form-control{name: 'title', default: 'title'}
+            
+            
+            .form-group
+              %label{for: 'text'}
+                Text
+              %textarea.form-control{rows: 10, name: 'text', default: 'Text...!'}
+              %button.btn.btn-primary{type: 'submit'}
+                Save!

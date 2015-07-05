@@ -1,0 +1,27 @@
+!!!
+%html
+  %head
+    %link{rel: 'stylesheet', href: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'}
+    %link{rel: 'stylesheet', href: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css'}
+    %script{src: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'}
+    %title 
+      =title
+  %body
+  .container
+    .row
+      .col-md-2
+        .panel.panel-default
+          .panel-body
+            %ul.nav.nav-pills.nav-stacked
+              -files.each do |file|
+                %li
+                  %a{href: "/#{file}"}
+                    =file
+      .col-md-8
+        =text
+      .col-md-2
+        %a.btn.btn-default{href: "/edit/#{filename}"}
+          EDITIEREN
+        %a.btn.btn-primary{href: "/new"}
+          NEU
+      
