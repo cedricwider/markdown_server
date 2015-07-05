@@ -7,6 +7,7 @@ end
 
 RAILS_ENV   = ENV['RAILS_ENV'] || 'production'
 use_bundler = File.file? 'Gemfile'
+use_config  = File.file? 'config.ru'
 rake_cmd    = use_bundler ? 'bundle exec rake' : 'rake'
 
 if use_bundler
@@ -16,6 +17,13 @@ if use_bundler
 
   # update gem bundle
   run "bundle install #{bundler_args.join(' ')}"
+end
+
+
+if use_config
+  rake_args = []
+  
+  run "rakeup #{rake_args.join(' ')}"
 end
 
 if File.file? 'Rakefile'
