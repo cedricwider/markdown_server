@@ -2,4 +2,4 @@
 gems/*
 !gems/cache
 !gems/bundler
-.rspec
+.rspecviews/content/*
