@@ -11,9 +11,12 @@
       .panel.panel-default
         .panel-body
           %form{action: "/edit/#{filename}", method: 'post'}
-            %div
-              %textarea.form-control{rows: 10, name: 'text'}
-                =text
-            %div
-              %button.btn.btn-primary{type: 'submit'}
-                Save!
+            .row
+              .col-md-10
+                %textarea.form-control{rows: 10, name: 'text'} #{text}
+              .col-md-2
+                .btn-group
+                  %button.btn.btn-default{type: 'submit'}
+                    %span.glyphicon.glyphicon-ok
+                  %a.btn.btn-default{href:"/"}
+                    %span.glyphicon.glyphicon-remove

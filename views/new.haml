@@ -10,16 +10,25 @@
     .container
       .panel.panel-default
         .panel-body
-          %form{action: "/create", method: 'post'}
-            .form-group
-              %label{for: 'title_label'}
-                Title
-              %input.form-control{name: 'title', default: 'title'}
-            
-            
-            .form-group
-              %label{for: 'text'}
-                Text
-              %textarea.form-control{rows: 10, name: 'text', default: 'Text...!'}
-              %button.btn.btn-primary{type: 'submit'}
-                Save!
+          %form.form-horizontal{action: "/create", method: 'post'}
+            .row
+              .col-md-10
+                .form-group
+                  %label.col-sm-2.control-label{for: 'title_label'}
+                    Title
+                  .col-sm-10
+                    %input.form-control{name: 'title', default: 'title'}
+              .col-md-2
+                .btn-group
+                  %button.btn.btn-default{type: 'submit'}
+                    %span.glyphicon.glyphicon-ok
+                  %a.btn.btn-default{href:"/"}
+                    %span.glyphicon.glyphicon-remove
+
+            .row
+              .col-md-10
+                .form-group
+                  %label.col-sm-2.control-label{for: 'text'}
+                    Text
+                  .col-sm-10
+                    %textarea.form-control{rows: 10, name: 'text', default: 'Text...!'}

@@ -20,8 +20,10 @@
       .col-md-8
         =text
       .col-md-2
-        %a.btn.btn-default{href: "/edit/#{filename}"}
-          EDITIEREN
-        %a.btn.btn-primary{href: "/new"}
-          NEU
+        .btn-toolbar{role: "toolbar"}
+          .btn-group
+            %a.btn.btn-default{href: "/edit/#{filename}"}
+              %span.glyphicon.glyphicon-pencil
+            %a.btn.btn-default{href: "/new"}
+              %span.glyphicon.glyphicon-plus
       

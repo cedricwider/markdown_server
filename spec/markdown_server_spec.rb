@@ -1,4 +1,4 @@
-llrequire 'spec_helper'
+require 'spec_helper'
 
 describe MarkdownServer do
   pending 'Add specs!'
