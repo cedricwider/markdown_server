@@ -1,25 +1,30 @@
+# Helper module.
 module Helper
-  MARKUP_VIEWS_DIR = 'views/content'
-  
-  def html_content_from(markup:)
-    md = RDiscount.new(File.read(File.expand_path("#{MARKUP_VIEWS_DIR}/#{markup}.md")))
+  MARKUP_VIEWS_DIR = 'views/content'.freeze
+
+  def html_content_from(markup: nil)
+    md = RDiscount.new(file_content_for(markup))
     md.to_html
   end
-  
-  def markup_content_from(file:)
-    File.read(File.expand_path("#{MARKUP_VIEWS_DIR}/#{file}.md"))
+
+  def file_content_for(markup)
+    File.read(File.expand_path("#{MARKUP_VIEWS_DIR}/#{markup}.md"))
   end
-  
-  def write_markup!(file:, content:)
+
+  def markup_content_from(file: nil)
+    file_content_for(file)
+  end
+
+  def write_markup!(file: nil, content: nil)
     File.write(File.expand_path("#{MARKUP_VIEWS_DIR}/#{file}.md"), content)
   end
-  
+
   def available_files
     files = Dir["#{MARKUP_VIEWS_DIR}/*.md"]
-    files.map { | file | File.basename(file).gsub('.md', '') }.sort
+    files.map { |file| File.basename(file).gsub('.md', '') }.sort
   end
-  
-  def exist?(name:)
+
+  def exist?(name: nil)
     File.exist?("#{MARKUP_VIEWS_DIR}/#{name}.md")
   end
 end

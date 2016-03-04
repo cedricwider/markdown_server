@@ -1,2 +1,2 @@
 #!/usr/bin/env ruby
-system "rackup config.ru"
+system 'rackup config.ru'
