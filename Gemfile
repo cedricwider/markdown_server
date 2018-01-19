@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 source 'http://rubygems.org'
 
 gem 'bundler'
-gem 'rdiscount'
-gem 'thin'
-gem 'sinatra'
 gem 'haml'
 gem 'json'
+gem 'rdiscount'
+gem 'sinatra'
+gem 'thin'
 
 group :development do
-  gem 'rubocop'
   gem 'rspec'
+  gem 'rubocop'
 end
