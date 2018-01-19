@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 # Helper module.
 module Helper
-  MARKUP_VIEWS_DIR = 'views/content'.freeze
+  MARKUP_VIEWS_DIR = 'views/content'
 
   def html_content_from(markup: nil)
     md = RDiscount.new(file_content_for(markup))
